@@ -1,0 +1,43 @@
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="text-center">
+                    <h1>Request Form</h1>
+                    <h4>Enter product details to review!</h4>
+
+                </div>
+                <form [formGroup]="productForm" (ngSubmit)="addProduct()">
+                    <div class="form-group">
+                      <label for="pCode">Product Code</label>
+                      <input  [class.is-invalid]="productForm.controls['productCode'].invalid && productForm.controls['productCode'].touched"  formControlName="productCode" type="text" class="form-control" id="pCode" placeholder="Enter productCode">
+                      <span class="text-danger" *ngIf="productForm.controls['productCode'].dirty && productForm.hasError('required','productCode')">Product Code Id is Required</span>
+
+                    </div>
+                    <div class="form-group">
+                      <label for="pname">Product Name</label>
+                      <input  [class.is-invalid]="productForm.controls['productName'].invalid && productForm.controls['productName'].touched"   formControlName="productName" type="text" class="form-control" id="pname" placeholder="Name">
+                      <span class="text-danger" *ngIf="productForm.controls['productName'].dirty && productForm.hasError('required','productName')">Product Name is Required</span>
+                      
+                    </div>
+                    <div class="form-group">
+                        <label for="brand">Brand</label>
+                        <input  [class.is-invalid]="productForm.controls['brand'].invalid && productForm.controls['brand'].touched"  formControlName="brand" type="text" class="form-control" id="brand" placeholder="brand">
+                        <span class="text-danger" *ngIf="productForm.controls['brand'].dirty && productForm.hasError('required','brand')">brand Name is Required</span>
+                        
+                      </div>
+                      <div class="form-group">
+                        <label for="price">Price</label>
+                        <input  [class.is-invalid]="productForm.controls['price'].invalid && productForm.controls['price'].touched"  formControlName="price" type="number" class="form-control" id="price" placeholder="price">
+                        <span class="text-danger" *ngIf="productForm.controls['price'].dirty && productForm.hasError('required','price')">Price is Required</span>
+                        
+                      </div>
+              <button type="submit" [disabled]="!productForm.valid" class="btn btn-primary">Add Request</button>
+                  </form>
+                  <a class="router" routerLink="/dashboard"> Go to DashBoard</a>
+
+            </div>
+        </div>
+    </div>
+</div>

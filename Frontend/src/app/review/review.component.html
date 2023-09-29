@@ -1,0 +1,25 @@
+<h2 class="p-3 text-center">Review for product code : {{productCode}}</h2>
+<div class="container">
+	<button class="mb-2" mat-raised-button color="primary" (click)="addReviewDialog()">Add Review <mat-icon>edit</mat-icon></button>  
+    <table class="table table-striped table-bordered">
+        <thead>
+            <tr>
+                <th>date</th>
+				<th>userName</th>
+				 <th>rating</th>
+                <th>review</th>
+                
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let review of reviewList">
+                <td>{{review.date | date: 'dd/MM/yyyy'}}</td>
+				<td>{{review.userName}}</td>
+                <td>{{review.rating|number:'1.1-1'}}</td>
+				<td>{{review.heading}},{{review.review}}</td>
+                
+                
+            </tr>
+        </tbody>
+    </table>
+</div>

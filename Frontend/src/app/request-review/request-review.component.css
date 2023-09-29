@@ -1,0 +1,19 @@
+.card {
+  width: 600px;
+  padding: 35px;
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+div.form-group, button, div.form-check {
+  margin-top: 15px;
+}
+
+input {
+  margin-top: 5px;
+}
+
+a.router {
+  margin-top: 15px;
+}/*# sourceMappingURL=request-review.component.css.map */

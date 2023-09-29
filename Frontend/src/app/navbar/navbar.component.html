@@ -1,0 +1,11 @@
+
+<mat-toolbar color="primary">
+    <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+      <mat-icon><a href="/home" style="color: white;">supervised_user_circle</a></mat-icon>
+    </button>
+    <span>Product Community</span>
+    <span class="example-spacer"></span>
+    <small class="text-muted" *ngIf="loggedIn" class="mx-3">{{userName.split(" ")[0]}}</small>
+    <button *ngIf="!loggedIn" class="mx-2" mat-raised-button  color="blue" routerLink="/login" >Login</button>
+    <button *ngIf="loggedIn" class="mx-2" mat-raised-button color="warn" (click)="logout()" >Logout</button>
+  </mat-toolbar>
